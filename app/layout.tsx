@@ -24,10 +24,7 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
+  await (await createClient()).auth.getUser();
 
   return (
     <html lang="en" suppressHydrationWarning>
