@@ -1,0 +1,18 @@
+---
+description: data table create rules
+globs: 
+alwaysApply: false
+---
+
+# Data table rules.
+
+- always use [data-table.tsx](mdc:components/ui/data-table.tsx) 
+
+- for column declarations in  columns.tsx  use [columns.tsx](mdc:app/(modules)/admin/slot-machines/components/columns.tsx)  (slot-machines/components/columns.tsx) as reference
+
+..
+
+
+
+
+

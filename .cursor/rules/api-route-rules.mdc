@@ -1,0 +1,24 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+
+# Api route rules
+
+while creating an api route, if you need to create a prisma client, create like this
+
+create api routes in "@/app/(api)/api/"
+
+  in the api routes
+import { NextResponse } from "next/server";
+import { PrismaClient } from "@prisma/client";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/app/(api)/api/auth/[...nextauth]/route";
+import { slotMachineSchema } from "@/lib/types";
+
+const prisma = new PrismaClient();
+
+get prisma client like this. .
+
+

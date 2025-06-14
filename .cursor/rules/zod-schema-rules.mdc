@@ -1,0 +1,33 @@
+---
+description: zod schema rules
+globs: 
+alwaysApply: false
+---
+
+# Zod Schemas
+
+- create zod types in the [types.ts](mdc:lib/types.ts)  file under the lib directory according to prisma schema.
+
+- for boolean, date number fields use z.coerce
+
+- schema names must begin with lowercase letter and must be like modulenameSchema 
+
+- when creating a zod schema for table, dont add created_at, updated_at, and make  created_by, updated_by fields optional
+
+- create a dto type from zod schema in the types.ts file under the lib directory
+- types must begin with uppercase letter and must be like ModuleNameDTO
+
+- create a ModuleNameRowType from prisma . and always include relations 
+
+- for foreingn key fields , add xxx_id : string; only. dont add a inline z.object
+
+- sample: 
+    export type SlotMachineRowType = Prisma.SlotMachineGetPayload<{
+        include: { protocol: true; game_type: true };
+    }>;
+
+
+
+
+
+

@@ -1,0 +1,80 @@
+---
+description: create a new module rules
+globs: 
+alwaysApply: false
+---
+
+# Main rules for project .
+
+this is a project for a casino management system
+
+the project is built with nextjs, shadcn, tailwind, lucid icon
+
+the database is built with prisma and postgresql
+
+
+my project structure is like this:
+
+spark - slots
+├── app
+│   ├── (auth)
+│   │   └── login
+│   ├── (modules)
+│   │   ├── admin
+│   │   │   ├── slot - machines
+│   │   │   └── users
+│   │   │       └── components
+── operations
+│   │   ├── reports
+│   │   └── settings
+│   └── api
+│       ├── auth
+│       └── users
+├── components
+│   └── ui
+├── hooks
+├── lib
+├── prisma
+│   └── migrations
+│       └── TIMESTAMP_update_users_snake_case
+├── public
+├── scripts
+└── types
+
+
+
+
+
+use react - hook - form and zod for form handling and validation
+
+use react - query for data fetching
+
+use snake notation for database table names and column names
+
+use camel notation for javascript variable names
+
+name date fields with _at posix
+
+use shadcn / ui for the ui components
+
+use lucid icon for the icons
+
+use next - auth for authentication
+
+dont use toast 
+
+Use Tailwind for styling and shadcn for UI components.For colors use CSS variables and global classes instead of hardcored values. Use lucide-react for icons. Always apply responsive design.
+
+
+follow the rules strictly and  follow the sample files structures 
+
+while creating a new module,  
+1. create schemas and types 
+2. write api endpoints
+3. write hooks
+4. write pages and components
+
+
+while generating code, always fllow the rules and  dont write random code.  always try to write right working code.  
+
+dont use toast anywhere . 
