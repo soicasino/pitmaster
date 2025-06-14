@@ -4,77 +4,68 @@ globs:
 alwaysApply: false
 ---
 
-# Main rules for project .
 
-this is a project for a casino management system
+i mean by module  , 
 
-the project is built with nextjs, shadcn, tailwind, lucid icon
+a list page , a detail view component for the record,  an edit form and a container  component that manages the state edit list create and view 
 
-the database is built with prisma and postgresql
+according to state , container shows the apprpriate component. 
+
+cretation order: 
+1. zod schema and types
+2. server actions
+3- query and mutation hooks
+4- c omponents and pages
 
 
-my project structure is like this:
+i'll give you examples.
 
-spark - slots
-├── app
-│   ├── (auth)
-│   │   └── login
-│   ├── (modules)
-│   │   ├── admin
-│   │   │   ├── slot - machines
-│   │   │   └── users
-│   │   │       └── components
-── operations
-│   │   ├── reports
-│   │   └── settings
-│   └── api
-│       ├── auth
-│       └── users
-├── components
-│   └── ui
-├── hooks
-├── lib
-├── prisma
-│   └── migrations
-│       └── TIMESTAMP_update_users_snake_case
-├── public
-├── scripts
-└── types
+- always create zod schemas in [types.ts](mdc:lib/types.ts)
+- create DTO types from zod schemas
 
 
 
+- when creating  a new module, create a new folder in the app directory and add the components, pages, and styles for the module
+ 
+
+- create a new server action  in the app / actions directory and add the action here and use in the tanstack query and mutations for the module
+
+- i will give you the table in supabase. if i dont give , ask for the table name. 
+ 
+- i have main modules like admin(for administration and declaration pages like users, casinos, shifts, game tables etc)
+ 
+- i have reports module(inspector assignments history on shifts  )
+ 
+ 
+- i have operations module for daily operations like assigning inspectors to game tables for shifts, open/close days
+ 
+- if i dont specify the main module, ask me the main module
 
 
-use react - hook - form and zod for form handling and validation
 
-use react - query for data fetching
-
-use snake notation for database table names and column names
-
-use camel notation for javascript variable names
-
-name date fields with _at posix
-
-use shadcn / ui for the ui components
-
-use lucid icon for the icons
-
-use next - auth for authentication
-
-dont use toast 
-
-Use Tailwind for styling and shadcn for UI components.For colors use CSS variables and global classes instead of hardcored values. Use lucide-react for icons. Always apply responsive design.
+follow the style and functionality in samples.
 
 
-follow the rules strictly and  follow the sample files structures 
 
-while creating a new module,  
-1. create schemas and types 
-2. write api endpoints
-3. write hooks
-4. write pages and components
+and in the view there must be a tab component,   and first tab will be details tab.  
+
+if the model has detail tables  add tabs for them and put a placeholder content. 
 
 
-while generating code, always fllow the rules and  dont write random code.  always try to write right working code.  
 
-dont use toast anywhere . 
+
+when you need  to create a new component to use in multiple module, create under the components folder at the root of the project
+
+
+when you create a module add menu item to the menu - items.tsx file under the lib directory
+
+give a new uuid for every menu item.  and set role to ADMIN if i didnt specify
+
+sample menu item :
+ {
+        id: "3c4d5e6f-7a8b-9c0d-1e2f-3a4b5c6d7e8f",
+        title: "Protocol Types",
+        url: "/settings/protocol-types",
+        icon: Database,
+        role: "ADMIN",
+      },
